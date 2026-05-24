@@ -1,0 +1,441 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Georgia', serif;
+    background:#f8f4f1;
+    color:#4b3d35;
+}
+
+/* HEADER */
+
+header{
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.35),
+    rgba(0,0,0,0.35)),
+
+    url('Кутията.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+}
+
+/* NAVIGATION */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:30px 90px;
+}
+
+nav h1{
+    font-size:38px;
+    letter-spacing:4px;
+    font-weight:lighter;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:0.7;
+}
+
+/* HERO */
+
+.hero{
+    height:80vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero h2{
+ font-size:78px;
+    font-weight:300;
+
+    max-width:900px;
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+    overflow:hidden;
+    white-space:nowrap;
+
+    border-right:3px solid rgba(255,255,255,0.7);
+
+    width:0;
+
+    animation: typing 3s steps(25, end) forwards,
+               blink 0.8s infinite;
+}
+
+/* пише текста */
+@keyframes typing{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+/* мигаща черта */
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
+/* shimmer движение */
+@keyframes shineText{
+    0%{
+        background-position:0%;
+    }
+    50%{
+        background-position:100%;
+    }
+    100%{
+        background-position:0%;
+    }
+
+}
+
+.hero p{
+    font-size:24px;
+
+    margin-bottom:40px;
+
+    font-family:Arial, sans-serif;
+}
+
+.btn{
+    background:#d9b8a0;
+
+    padding:16px 45px;
+
+    border-radius:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#b89179;
+    transform:scale(1.05);
+}
+
+/* GENERAL SECTION */
+
+.section{
+    padding:120px 12%;
+    text-align:center;
+}
+
+.section h2{
+    font-size:52px;
+
+    font-weight:lighter;
+
+    margin-bottom:35px;
+}
+
+.section p{
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:2;
+
+    font-size:18px;
+
+    font-family:Arial, sans-serif;
+
+    color:#6b5b53;
+   
+
+}
+
+
+/* SOFT BACKGROUND */
+
+.dark-section{
+    background:#efe5df;
+}
+.order-btn{
+   display:inline-block;
+    margin-top:35px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#b89179;
+    color:white;
+
+    padding:18px 50px;
+    border-radius:40px;
+
+    text-decoration:none;
+    font-size:22px;
+
+    transition: all 0.4s ease;
+
+    box-shadow:0 0 15px rgba(184,145,121,0.4);
+
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+/* shimmer light */
+.order-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+    animation: shimmer 3s infinite;
+}
+
+/* hover ефект */
+.order-btn:hover{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 25px rgba(184,145,121,0.7),
+        0 0 60px rgba(184,145,121,0.4);
+}
+
+/* glow pulse */
+@keyframes glow{
+    0%{
+        box-shadow:0 0 12px rgba(184,145,121,0.3);
+    }
+    50%{
+        box-shadow:0 0 25px rgba(184,145,121,0.6);
+    }
+    100%{
+        box-shadow:0 0 12px rgba(184,145,121,0.3);
+    }
+}
+
+/* shimmer движение */
+@keyframes shimmer{
+    0%{
+        left:-150%;
+    }
+    50%{
+        left:150%;
+    }
+    100%{
+        left:150%;
+    }
+}
+
+.order-btn:hover{
+    background:#9f7b65;
+    transform:scale(1.05);
+}
+
+/* CARDS */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:35px;
+
+    margin-top:60px;
+}
+
+.card{
+    width:320px;
+
+    background:white;
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:20px;
+
+    font-size:28px;
+
+    font-weight:lighter;
+}
+
+.card p{
+    font-size:16px;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+}
+
+.product{
+    background:white;
+
+    padding:70px 20px;
+
+    border-radius:25px;
+
+    font-size:22px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:scale(1.04);
+}
+
+/* QUOTE */
+
+.quote{
+    background:#d9b8a0;
+
+    color:white;
+
+    padding:130px 10%;
+
+    text-align:center;
+}
+
+.quote h2{
+    font-size:58px;
+
+    font-weight:lighter;
+
+    line-height:1.5;
+}
+
+/* CONTACT */
+
+#contact p{
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2c2420;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:25px;
+
+        padding:30px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .hero h2{
+        font-size:48px;
+    }
+
+    .section h2{
+        font-size:38px;
+    }
+
+    .quote h2{
+        font-size:38px;
+    }
+form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+input,
+textarea{
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  font-size:16px;
+  outline:none;
+}
+
+textarea{
+  height:180px;
+  resize:none;
+}
+}
